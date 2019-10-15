@@ -1,2 +1,2 @@
 # GRUPO-07
-Trabalho em grupo, Guto, Jaque, Tiago.
+Trabalho em grupo: Guto, Jaque, Tiago.
