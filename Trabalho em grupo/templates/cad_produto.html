@@ -1,0 +1,41 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+
+    <h1>Cadastrar Eletrodomésticos:</h1>
+    <a href="/cad_produto"></a>
+    
+    <form action="/cad_produto/salvar" method="POST">
+
+      
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Tipo:</span>
+        <input type="text" class="form-control" placeholder="Informe o tipo..." aria-describedby="basic-addon1" name="tipo">
+      </div>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Modelo:</span>
+      <input type="text" class="form-control" placeholder="Informe o modelo..." aria-describedby="basic-addon1" name="modelo">
+    </div>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Marca:</span>
+    <input type="text" class="form-control" placeholder="Informe a marca..." aria-describedby="basic-addon1" name="marca">
+  </div>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Data de Fabricação:</span>
+  <input type="text" class="form-control" placeholder="Informe a data de fabricação..." aria-describedby="basic-addon1" name="data_fabric">
+</div>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Nº de Série:</span>
+  <input type="text" class="form-control" placeholder="Informe o nº de série..." aria-describedby="basic-addon1" name="serie">
+</div>
+</div>
+<input type="submit" value="Salvar">
+</form>
+
+
+{% endblock %}

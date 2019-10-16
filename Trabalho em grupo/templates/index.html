@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" href="../static/trabalhinho.css">
+</head>
+
+<body>
+    <div class='cabecalho'>
+        <div class = "logo"> 
+            <a href="/"></a>
+        </div>
+        <div class= "menu">
+            <ul>
+                <li>
+                    <a href="/cad_produto">Cadastrar Produtos</a>
+                </li>
+                <li>
+                        <a href="/listar_prod">Listar Produtos</a>
+                    </li>
+                <li>
+                    <a href="/efetuar_compra">Efetuar Compra</a>
+                </li>
+                <li>
+                    <a href="/politica_uso">Política do Uso</a>
+                </li>
+            </ul>    
+        </div>
+
+    </div>
+    {% block index %}
+
+    {% endblock %}
+</body>
+
+</html>

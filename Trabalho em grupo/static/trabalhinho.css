@@ -1,0 +1,32 @@
+body{
+    background: #ff7524;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu ul li{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-group{
+    width: 50%;
+    border: 1em solid;
+    border-radius: 1em;
+    background: #fff;
+    color: #bbb9b9;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-group-addon{
+    border: 1em solid;
+    border-radius: 1em;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-control{
+    background: #eaebe7;
+    width: 50%;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
