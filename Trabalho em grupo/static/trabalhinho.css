@@ -1,17 +1,18 @@
 body{
-    background: #ff7524;
+    background: #c0c0c0;
+    width: 100%;
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .menu ul li{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #fff;
 }
 
 .input-group{
-    width: 50%;
+    width: 100%;
     border: 1em solid;
-    border-radius: 1em;
     background: #fff;
     color: #bbb9b9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -19,14 +20,25 @@ body{
 
 .input-group-addon{
     border: 1em solid;
-    border-radius: 1em;
-    color: #000;
+    background: rgb(248, 246, 246);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-control{
     background: #eaebe7;
-    width: 50%;
+    width: 100%;
     color: #000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+}
+.row{
+
+}
+.col-sm{
+
+}
+thead{
+    width: 100%;
+    height: 100%;
 }
