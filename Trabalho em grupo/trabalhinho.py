@@ -1,6 +1,17 @@
 from flask import Flask, render_template, redirect, request
 from eletrodomesticos import Eletrodomesticos
+from usuario_senha import Usuario_senha
 import MySQLdb
+
+
+conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
+cursor = conexao.cursor()
+cursor.execute('SELECT * FROM usuario_senha')
+lista_usuarios = []
+for i in cursor.fetchall():
+    usuario = Usuario_senha(i[1],i[2])   
+    lista_usuarios.append(usuario)
+    print(usuario.senha)
 
 def salvar_eletro(cadastro_geral):
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
@@ -27,6 +38,35 @@ app=Flask(__name__)
 @app.route('/')
 def inicio():
     return render_template('login.html', titulo = titulo)
+
+# @app.route
+# def validar_usuario_senha():
+#     usuario1 = request.form['usuario']
+#     senha1 = request.form['senha']
+#     usuario1 = Usuario_senha(usuario1,senha1)
+#     for i in range(len(lista_usuarios)):
+#         var_temp_usuario= lista_usuarios[i]
+#         if usuario1.senha == var_temp_usuario.senha:
+#             menu()
+#             print('usuario validado com sucesso')
+#         else:
+#             print("voce digitou a senha errada")
+
+@app.route('/testar_login', methods=['POST'])
+def login():
+    usuario1 = request.form['usuario']
+    senha1 = request.form['senha']
+    user = Usuario_senha(usuario1,senha1)
+    for i in range(len(lista_usuarios)):
+        var_temp_usuario = lista_usuarios[i]
+        if user.senha == var_temp_usuario.senha and user.usuario == var_temp_usuario.usuario:
+            return render_template('menu.html', titulo=titulo)
+
+    if user.senha != var_temp_usuario.senha:
+            return redirect('/')
+
+    elif user.usuario != var_temp_usuario.usuario:
+            return redirect('/')     
 
 @app.route('/menu')
 def menu():
@@ -63,7 +103,6 @@ def efetuar_compra():
 @app.route('/politica_uso')
 def politica_usuario():
     return render_template('politica_uso.html', titulo = titulo)
-
 
 
 app.run(debug=True)

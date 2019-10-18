@@ -35,19 +35,23 @@
   </head>
   <body>
     <h1>Faça seu login:</h1>
-    <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Usuário:</span>
-            <input type="text" class="form-control" placeholder="Informe o seu usuario" aria-describedby="basic-addon1">
-          </div>
-    <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Senha:</span>
-            <input type="text" class="form-control" placeholder="Informe a sua senha" aria-describedby="basic-addon1">
-          </div>    
+    <form action="/testar_login" method="POST">
 
-    
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-    <script src="js/bootstrap.min.js"></script>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Usuário:</span>
+        <input type="text" class="form-control" placeholder="Informe o seu usuario" aria-describedby="basic-addon1" name='usuario'>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Senha:</span>
+        <input type="text" class="form-control" placeholder="Informe a sua senha" aria-describedby="basic-addon1" name='senha'>
+      </div>    
+      
+      
+      <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+      <script src="js/bootstrap.min.js"></script>
+      <input type="submit" value="Login">
+    </form>
   </body>
 </html>
