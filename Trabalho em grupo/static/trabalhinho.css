@@ -5,6 +5,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+th{
+    padding: 1.5em;
+}
+
 .menu ul li{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #fff;
@@ -69,7 +73,8 @@ text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-background-color: rgb(1, 17, 236);
+background-color: rgb(129, 129, 129);
+color: rgb(2, 2, 2);
 }
 
 li.dropdown {
@@ -97,4 +102,12 @@ text-align: left;
 
 .dropdown:hover .dropdown-content {
 display: block;
+}
+
+form{
+    padding: 1.5em;
+}
+
+.a{
+    padding: 1.5em;
 }

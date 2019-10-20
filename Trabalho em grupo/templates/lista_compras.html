@@ -1,0 +1,39 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+    <h1>Lista de Compras</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>nome</th>
+                <th>cpf</th>
+                <th>endereço</th>
+                <th>série</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lista %}
+            
+                <tr>
+                    <td>{{i.nome}}</td>
+                    <td>{{i.cpf}}</td>
+                    <td>{{i.endereco}}</td>
+                    <td>{{i.serie_fk}}</td>
+                    <td>
+                        <a href="/produto/alterar?id={{i.serie_fk}}">Alterar</a>
+                        <a href="/produto/delete?id={{i.serie_fk}}">Deletar</a>
+                    </td>
+                
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+
+        
+    </table>
+
+{% endblock %}
