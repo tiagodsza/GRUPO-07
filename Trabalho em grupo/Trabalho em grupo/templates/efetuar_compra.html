@@ -1,0 +1,46 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{titulo}}</title>
+</head>
+
+    <body>
+        <form action="/salvar_compras" method = "POST">
+            <div class="labels">
+                <label for="">Nome:</label>
+            </div>        
+            <input type="text" name="nome">
+            
+            <div class="labels">
+                <label for="">CPF:</label>
+            </div>        
+            <input type="text" name="cpf">
+            
+            <div class="labels">
+                <label for="">Endereço:</label>
+            </div>        
+            <input type="text" name="endereco">
+            
+            <div class="labels">
+                <label for="">Produto:</label>
+            </div>
+            <select name="serie" id = "serie" >
+                    {% for e in lista %}
+                <option >{{e.marca}} , {{e.modelo}}, {{e.serie}}</option>
+                    {% endfor %}
+            </select>
+ 
+
+            <input type="submit" value="Salvar">
+        </form>
+    </body>
+</html>
+
+{% endblock %}

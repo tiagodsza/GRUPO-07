@@ -1,0 +1,39 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+    <h1>Lista de Compras</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Série</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lista %}
+            
+                <tr>
+                    <td>{{i.nome}}</td>
+                    <td>{{i.cpf}}</td>
+                    <td>{{i.endereco}}</td>
+                    <td>{{i.serie_fk}}</td>
+                    <td>
+                        <a href="/efetuar_compra/alterar?serie={{i.serie_fk}}">Alterar</a>
+                        <a href="/efetuar_compra/delete?serie={{i.serie_fk}}">Deletar</a>
+                    </td>
+                
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+
+        
+    </table>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+    <h3>Lista de Produtos</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Série</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Data de Fabricação</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lista %}
+            
+                <tr>
+                    <td>{{i.serie}}</td>
+                    <td>{{i.tipo}}</td>
+                    <td>{{i.modelo}}</td>
+                    <td>{{i.marca}}</td>
+                    <td>{{i.data_fabric}}</td>
+                    <td>R${{i.preco}}</td>
+                    <td>
+                        <a href="/cad_produto/alterar?serie={{i.serie}}&tipo={{i.tipo}}&modelo{{i.modelo}}&marca{{i.marca}}&data_fabric{{i.data_fabric}}&preco{{i.preco}}">Alterar</a>
+                        <a href="/lista_produto/delete?serie={{i.serie}}">Deletar</a>
+                    </td>
+                
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+
+        
+    </table>
+
+{% endblock %}

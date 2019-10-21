@@ -1,0 +1,73 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+
+<h3>Cadastrar Eletrodomésticos:</h3>
+<a href="/cad_produto"></a>
+
+<!-- <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Tipo:</span>
+  <input type="text" class="form-control" placeholder="Informe o tipo..." aria-describedby="basic-addon1" name="tipo">
+</div>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Modelo:</span>
+  <input type="text" class="form-control" placeholder="Informe o modelo..." aria-describedby="basic-addon1"
+  name="modelo">
+</div>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Marca:</span>
+  <input type="text" class="form-control" placeholder="Informe a marca..." aria-describedby="basic-addon1"
+  name="marca">
+</div>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Data de Fabricação:</span>
+  <input type="text" class="form-control" placeholder="Informe a data de fabricação..."
+  aria-describedby="basic-addon1" name="data_fabric">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Preço:</span>
+  <input type="text" class="form-control" placeholder="Informe o preço..." aria-describedby="basic-addon1"
+  name="preco">
+</div> -->
+<!-- <div class="labels">
+  <label for="">Tipo:</label>
+  <input type="text" placeholder="Informe o tipo..." name="tipo">
+  
+  <div class="labels">
+    <label for="">Modelo:</label>
+  </div>
+  <input type="text" placeholder="Informe o modelo..." name="modelo">
+  
+  <div class="labels">
+    <label for="">Marca:</label>
+  </div>        
+  <input type="text" placeholder="Informe a marca..." name="marca">
+  
+  <div class="labels">
+    <label for="">Data de Fabricação:</label>
+  </div>        
+  <input type="text" placeholder="Data de fabricação..." name="data_fabric">
+  
+  <div class="labels">
+    <label for="">Preço:</label>
+  </div>        
+  <input type="text" placeholder="Informe o preço..." name="preco">
+</div> -->
+<div class= "formulario">
+    <form action="/cad_produto/salvar" method="POST">
+      <input class="input" type="text" placeholder="Tipo" name="tipo"> 
+      <input class="input" type="text" placeholder="Modelo" name="modelo">
+      <input class="input" type="text" placeholder="Marca" name="marca"> 
+      <input class="input" type="text" placeholder="Data de Fabricação" name="data_fabric">
+      <input class="input" type="text" placeholder="Preço" name="preco"> 
+      <input type="submit" value="Salvar">        
+    </form>        
+</div>        
+          
+  <!-- <input type="submit" value="Salvar"> -->
+
+{% endblock %}

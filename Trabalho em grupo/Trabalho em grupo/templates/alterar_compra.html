@@ -1,0 +1,17 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+<h1>Alterar dados da compra:</h1>
+
+<div class= "formulario">
+    <form action="/alterar_compra/salvar" method="POST"> 
+        <input type="hidden" name="serie" value="{{compra.serie}}">
+        <input class="input" type="text" placeholder="tipo" name="tipo" value="{{compra.tipo}}" > 
+        <input class="input" type="text" placeholder="descrição" name="descricao" value="{{categoria.descricao}}">
+        <input type="submit" value="salvar">        
+    </form>
+
+</div>
+
+{% endblock %}

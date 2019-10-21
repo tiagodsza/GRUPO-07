@@ -1,0 +1,47 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+    <h3>Lista de Compras</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Modelo</th>                
+                <th>Preço</th>
+                <th>Série</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lista %}
+            
+                <tr>
+                    <td>{{i.nome}}</td>
+                    <td>{{i.cpf}}</td>
+                    <td>{{i.endereco}}</td>
+                    <td>{{i.tipo}}</td>
+                    <td>{{i.marca}}</td>
+                    <td>{{i.modelo}}</td>
+                    <td>{{i.preco}}</td>
+                    <td>{{i.serie}}</td>
+                    <td>
+                        <a href="//alterar?serie={{i.serie}}">Alterar</a>
+                        <a href="/lista_compras_join/delete?serie={{i.serie}}">Deletar</a>
+                    </td>
+                
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+
+        
+    </table>
+
+{% endblock %}
