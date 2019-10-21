@@ -7,6 +7,14 @@ class Eletrodomesticos:
         self.preco = preco
         self.tipo = tipo
 
-     
+        @property
+        def nome(self):
+            return self.nome
 
+        @property
+        def cpf(self):
+            return self.cpf
 
+        @property
+        def endereco(self):
+            return self.endereco     

@@ -2,7 +2,7 @@
 
 {% block index %}
 
-    <h1>Lista de Compras</h1>
+    <h3>Lista de Compras</h3>
 
     <table>
         <thead>
@@ -10,6 +10,10 @@
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Endereço</th>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Modelo</th>                
+                <th>Preço</th>
                 <th>Série</th>
             </tr>
         </thead>
@@ -20,10 +24,14 @@
                     <td>{{i.nome}}</td>
                     <td>{{i.cpf}}</td>
                     <td>{{i.endereco}}</td>
-                    <td>{{i.serie_fk}}</td>
+                    <td>{{i.tipo}}</td>
+                    <td>{{i.marca}}</td>
+                    <td>{{i.modelo}}</td>
+                    <td>{{i.preco}}</td>
+                    <td>{{i.serie}}</td>
                     <td>
-                        <a href="/efetuar_compra/alterar?serie={{i.serie_fk}}">Alterar</a>
-                        <a href="/efetuar_compra/delete?serie={{i.serie_fk}}">Deletar</a>
+                        <a href="//alterar?serie={{i.serie}}">Alterar</a>
+                        <a href="/lista_compras_join/delete?serie={{i.serie}}">Deletar</a>
                     </td>
                 
                 </tr>

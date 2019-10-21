@@ -52,7 +52,7 @@ thead{
     height: 100%;
 }
 
-ul {
+ul{
 list-style-type: none;
 margin: 0;
 padding: 0;
@@ -60,7 +60,7 @@ overflow: hidden;
 background-color: #333;
 }
 
-li {
+li{
 float: left;
 }
 
@@ -77,11 +77,11 @@ background-color: rgb(129, 129, 129);
 color: rgb(2, 2, 2);
 }
 
-li.dropdown {
+li.dropdown{
 display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content{
 display: none;
 position: absolute;
 background-color: #f9f9f9;
@@ -90,7 +90,7 @@ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a{
 color: black;
 padding: 12px 16px;
 text-decoration: none;
@@ -98,16 +98,30 @@ display: block;
 text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content{
 display: block;
 }
 
 form{
-    padding: 1.5em;
+    padding: 1em;
 }
 
 .a{
     padding: 1.5em;
+}
+
+label{
+    width: 70%;
+}
+
+h2{
+    padding: 0.5em;
+}
+
+h3{
+    padding: 0.5em;
 }

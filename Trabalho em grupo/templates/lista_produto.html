@@ -2,17 +2,17 @@
 
 {% block index %}
 
-    <h1>Lista de Produtos</h1>
+    <h3>Lista de Produtos</h3>
 
     <table>
         <thead>
             <tr>
-                <th>série</th>
-                <th>tipo</th>
-                <th>modelo</th>
-                <th>marca</th>
-                <th>data de fabricação</th>
-                <th>preço</th>
+                <th>Série</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Data de Fabricação</th>
+                <th>Preço</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +26,8 @@
                     <td>{{i.data_fabric}}</td>
                     <td>R${{i.preco}}</td>
                     <td>
-                        <a href="/produto/alterar?id={{i.serie}}">Alterar</a>
-                        <a href="/produto/delete?id={{i.serie}}">Deletar</a>
+                        <a href="/cad_produto/alterar?serie={{i.serie}}&tipo={{i.tipo}}&modelo{{i.modelo}}&marca{{i.marca}}&data_fabric{{i.data_fabric}}&preco{{i.preco}}">Alterar</a>
+                        <a href="/lista_produto/delete?serie={{i.serie}}">Deletar</a>
                     </td>
                 
                 </tr>

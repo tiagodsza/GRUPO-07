@@ -1,0 +1,20 @@
+{% extends "menu.html" %}
+
+{% block index %}
+
+<h3>Alterar Produto:</h3>
+
+<div class= "formulario">
+    <form action="/alterar_produto/salvar" method="POST"> 
+        <input type="hidden" name="serie" value="{{produto.serie}}">
+        <input class="input" type="text" placeholder="Tipo" name="tipo" value="{{compra.tipo}}" > 
+        <input class="input" type="text" placeholder="Marca" name="marca" value="{{compra.marca}}">
+        <input class="input" type="text" placeholder="Modelo" name="tipo" value="{{compra.modelo}}" > 
+        <input class="input" type="text" placeholder="Data de Fabricação" name="descricao" value="{{compra.data_fabric}}">
+        <input class="input" type="text" placeholder="Preço" name="preco" value="{{compra.preco}}" > 
+        <input type="submit" value="salvar">        
+    </form>
+
+</div>
+
+{% endblock %}
