@@ -3,6 +3,7 @@
 {% block index %}
 
     <h3>Lista de Compras</h3>
+<div class="tabela-compra">
 
     <table class="table table-dark">
         <thead>
@@ -20,26 +21,27 @@
         <tbody>
             {% for i in lista %}
             
-                <tr>
-                    <td>{{i.nome}}</td>
-                    <td>{{i.cpf}}</td>
-                    <td>{{i.endereco}}</td>
-                    <td>{{i.tipo}}</td>
-                    <td>{{i.marca}}</td>
-                    <td>{{i.modelo}}</td>
-                    <td>{{i.preco}}</td>
-                    <td>{{i.serie}}</td>
-                    <td>
-                    </td>
+            <tr>
+                <td>{{i.nome}}</td>
+                <td>{{i.cpf}}</td>
+                <td>{{i.endereco}}</td>
+                <td>{{i.tipo}}</td>
+                <td>{{i.marca}}</td>
+                <td>{{i.modelo}}</td>
+                <td>{{i.preco}}</td>
+                <td>{{i.serie}}</td>
+                <td>
+                </td>
                 
-                </tr>
+            </tr>
             {% endfor %}
-
+            
         </tbody>
-
-
-
+        
+        
+        
         
     </table>
+</div>
 
 {% endblock %}

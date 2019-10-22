@@ -12,6 +12,10 @@ app=Flask(__name__)
 def inicio():
     return render_template('login.html', titulo = titulo)
 
+@app.route('/politica_uso')
+def politica_usuario():
+    return render_template('politica_uso.html', titulo = titulo)
+
 @app.route('/menu')
 def menu():
     return render_template('menu.html', titulo = titulo)
@@ -71,17 +75,6 @@ def salvar_comprar():
     salvar_compras(sales_order)
     return redirect('/lista_compras_join')
 
-# @app.route('/lista_compras')
-# def lista_compras():
-#     return render_template('lista_compras_join.html', lista = listar_compras_db())
-
-# def deletar_compra_db(serie_fk):
-#     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
-#     cursor = conexao.cursor()
-#     cursor.execute("DELETE FROM compra WHERE serie_fk={}".format(serie_fk))
-#     conexao.commit()
-#     conexao.close()
-
 def salvar_compras(sales_order):
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
     cursor = conexao.cursor()
@@ -112,22 +105,13 @@ def deletar_produto_db(serie):
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
     lista = listar_compras_db()  
     cursor = conexao.cursor()
-    for i in lista: 
+    for i in listar_compras_db():
         if int(serie) == i.serie_fk:
-            return render_template('erro_compra.html')   
+            return render_template('erro_compra.html')    
     cursor.execute("DELETE FROM eletrodomestico WHERE serie={}".format(serie))
     conexao.commit()
-    return redirect('/lista_produto')    
-#selecionar a coluna do id indicado e com um if se existir serie_fk não excluir, senão excluir.
+    return redirect('/lista_produto')  
 
-# def deletar_produto_db(serie):
-#     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
-#     lista = listar_compras_db()  
-#     cursor = conexao.cursor()
-#     if serie == i.serie_fk:
-#         return render_template('erro_compra.html')   
-#     cursor.execute("DELETE FROM eletrodomestico WHERE serie={}".format(serie))
-#     return redirect('/lista_produto')  
 
 def listar_compras_db_join():
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
@@ -172,32 +156,6 @@ def salvar_eletrodomestico():
 @app.route('/efetuar_compra')
 def efetuar_compra():
     return render_template('efetuar_compra.html', titulo = titulo, lista = listar_eletro_db())
-
-# @app.route('/alterar_produto')
-# def alterar_produto():
-#     serie = request.args['serie']
-#     tipo = request.args['tipo']
-#     marca = request.args['marca']
-#     modelo = request.args['modelo']
-#     data_fabricacao = request.args['data_fabric']
-#     preco = request.args['preco'] 
-#     produto_alterado = Eletrodomesticos(tipo, marca, modelo, data_fabricacao, preco)
-#     produto_alterado.serie = serie
-#     return render_template('alterar_produto.html', atualizar_produto = produto_alterado)
-
-# @app.route('/alterar_produto/salvar', methods = ['POST'])
-# def alterar_produto_salvar():
-#     return redirect('lista_produto.html')
-
-# @app.route('/lista_compras_join/delete')
-# def deletar_compra():
-#     serie_fk = request.args['serie']
-#     deletar_compra_db(serie_fk)
-#     return redirect ('/lista_compras_join')
-
-@app.route('/politica_uso')
-def politica_usuario():
-    return render_template('politica_uso.html', titulo = titulo)
 
 @app.route('/lista_compras_join')
 def listar_produtos_join():
