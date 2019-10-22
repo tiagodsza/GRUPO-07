@@ -16,10 +16,6 @@ def inicio():
 def menu():
     return render_template('menu.html', titulo = titulo)
 
-@app.route('/menu2')
-def menu2():
-    return render_template('menu2.html', titulo = titulo)
-
 @app.route('/testar_login', methods=['POST'])
 def login():
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
@@ -40,7 +36,6 @@ def login():
             return redirect('/')
     elif user.usuario != var_temp_usuario.usuario:
             return redirect('/')
-#return render template('menu.html', titulo = titulo)
 
 def listar_compras_db():
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
@@ -118,11 +113,21 @@ def deletar_produto_db(serie):
     lista = listar_compras_db()  
     cursor = conexao.cursor()
     for i in lista: 
-        if serie == i.serie_fk:
+        if int(serie) == i.serie_fk:
             return render_template('erro_compra.html')   
     cursor.execute("DELETE FROM eletrodomestico WHERE serie={}".format(serie))
-    return redirect('/lista_produto')
+    conexao.commit()
+    return redirect('/lista_produto')    
 #selecionar a coluna do id indicado e com um if se existir serie_fk não excluir, senão excluir.
+
+# def deletar_produto_db(serie):
+#     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
+#     lista = listar_compras_db()  
+#     cursor = conexao.cursor()
+#     if serie == i.serie_fk:
+#         return render_template('erro_compra.html')   
+#     cursor.execute("DELETE FROM eletrodomestico WHERE serie={}".format(serie))
+#     return redirect('/lista_produto')  
 
 def listar_compras_db_join():
     conexao = MySQLdb.connect(host="mysql.zuplae.com", user="zuplae12", passwd="grupo07", database="zuplae12")
@@ -138,7 +143,6 @@ def listar_compras_db_join():
         lista_compra_join.append(eletro)
     conexao.close()
     return lista_compra_join
-
 
 @app.route('/cad_produto')
 def cadastrar():
