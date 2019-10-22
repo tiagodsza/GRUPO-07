@@ -1,4 +1,4 @@
-{% extends "menu.html" %}
+{% extends "menu2.html" %}
 
 {% block index %}
 
@@ -22,8 +22,6 @@
                     <td>{{i.endereco}}</td>
                     <td>{{i.serie_fk}}</td>
                     <td>
-                        <a href="/efetuar_compra/alterar?serie={{i.serie_fk}}">Alterar</a>
-                        <a href="/efetuar_compra/delete?serie={{i.serie_fk}}">Deletar</a>
                     </td>
                 
                 </tr>
