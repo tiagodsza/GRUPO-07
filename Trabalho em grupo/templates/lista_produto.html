@@ -4,7 +4,7 @@
 
     <h3>Lista de Produtos</h3>
 
-    <table>
+    <table class="table table-striped table-dark">
         <thead>
             <tr>
                 <th>Série</th>
@@ -26,7 +26,7 @@
                     <td>{{i.data_fabric}}</td>
                     <td>R${{i.preco}}</td>
                     <td>
-                        <a href="/cad_produto/alterar?serie={{i.serie}}&tipo={{i.tipo}}&modelo{{i.modelo}}&marca{{i.marca}}&data_fabric{{i.data_fabric}}&preco{{i.preco}}">Alterar</a>
+                        <a href="/cad_produto/alterar?serie={{i.serie}}&tipo={{i.tipo}}&modelo={{i.modelo}}&marca={{i.marca}}&data_fabric={{i.data_fabric}}&preco={{i.preco}}">Alterar</a>
                         <a href="/lista_produto/delete?serie={{i.serie}}">Deletar</a>
                     </td>
                 

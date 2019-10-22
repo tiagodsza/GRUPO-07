@@ -7,12 +7,12 @@
 <div class= "formulario">
     <form action="/alterar_produto/salvar" method="POST"> 
         <input type="hidden" name="serie" value="{{produto.serie}}">
-        <input class="input" type="text" placeholder="Tipo" name="tipo" value="{{compra.tipo}}" > 
-        <input class="input" type="text" placeholder="Marca" name="marca" value="{{compra.marca}}">
-        <input class="input" type="text" placeholder="Modelo" name="tipo" value="{{compra.modelo}}" > 
-        <input class="input" type="text" placeholder="Data de Fabricação" name="descricao" value="{{compra.data_fabric}}">
-        <input class="input" type="text" placeholder="Preço" name="preco" value="{{compra.preco}}" > 
-        <input type="submit" value="salvar">        
+        <input class="input" type="text" placeholder="Tipo" name="tipo" value="{{produto.tipo}}" > 
+        <input class="input" type="text" placeholder="Marca" name="marca" value="{{produto.marca}}">
+        <input class="input" type="text" placeholder="Modelo" name="modelo" value="{{produto.modelo}}" > 
+        <input class="input" type="text" placeholder="Data de Fabricação" name="data_fabric" value="{{produto.data_fabric}}">
+        <input class="input" type="text" placeholder="Preço" name="preco" value="{{produto.preco}}" > 
+        <input type="submit" value="Salvar">        
     </form>
 
 </div>
